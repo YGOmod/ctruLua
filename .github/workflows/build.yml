@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y make python3-pip
+        pip3 install ldoc
+        
+    - name: Build CtrμLua
+      run: make build-all
+      
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ctruLua
+        path: |
+          ctruLua.3dsx
+          ctruLua.cia
+          doc/
+    
