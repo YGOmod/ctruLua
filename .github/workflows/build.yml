@@ -12,12 +12,15 @@ jobs:
     name: Test build
     runs-on: ubuntu-latest
     container:
-      image: 'devkitpro/devkitarm'
+      image: 'devkitpro/devkitarm:latest'
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      - name: Checkout 
+        uses: actions/checkout@v3
+      - name: Install build requirements
+        run: |
+          apt update
+          apt install ninja-build
 
-      - name: build
-        run: make build-all
+      - name: Build the homebrew 
+        run: make 
