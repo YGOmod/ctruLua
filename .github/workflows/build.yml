@@ -23,4 +23,4 @@ jobs:
           apt install ninja-build
 
       - name: Build the homebrew 
-        run: make build-all
+        run: make all
