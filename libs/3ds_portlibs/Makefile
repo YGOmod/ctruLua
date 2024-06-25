@@ -1,7 +1,7 @@
 FREETYPE             := freetype
 FREETYPE_VERSION     := $(FREETYPE)-2.6
 FREETYPE_SRC         := $(FREETYPE_VERSION).tar.bz2
-FREETYPE_DOWNLOAD    := "http://download.savannah.gnu.org/releases/freetype/freetype-2.6.tar.bz2"
+FREETYPE_DOWNLOAD    := "https://mirror.netcologne.de/savannah/freetype/freetype-old/freetype-2.6.tar.bz2"
 
 LIBEXIF              := libexif
 LIBEXIF_VERSION      := $(LIBEXIF)-0.6.21
