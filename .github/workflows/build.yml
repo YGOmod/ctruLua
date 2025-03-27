@@ -17,10 +17,13 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v3
-      - name: Install build requirements
-        run: |
-          apt update
-          apt install ninja-build
+        with:
+          submodules: recursive
 
       - name: Build the homebrew 
         run: make all
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ctruLua
+          path: /home/runner/work/ctruLua/ctruLua
