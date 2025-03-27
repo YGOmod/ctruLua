@@ -21,7 +21,7 @@ jobs:
           submodules: recursive
 
       - name: Build the homebrew 
-        run: make all
+        run: make build-all
 
       - uses: actions/upload-artifact@v4
         with:
