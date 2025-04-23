@@ -12,7 +12,7 @@ jobs:
     name: Test build
     runs-on: ubuntu-latest
     container:
-      image: 'devkitpro/devkitarm:20180522'
+      image: 'devkitpro/devkitarm:20200528'
 
     steps:
       - name: Checkout 
